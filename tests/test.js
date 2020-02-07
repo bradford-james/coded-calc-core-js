@@ -6,7 +6,7 @@ SET UP/TEAR DOWN
 ----------------
 */
 
-const Calculator = require('../calc')
+const Calculator = require('..')
 
 const CalcInst = new Calculator()
 

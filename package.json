@@ -1,15 +1,57 @@
 {
   "name": "coded-calc-core-js",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "directories": {
     "test": "tests"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "keywords": [],
   "author": "Bradford James <bradwettig@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bradford-james/coded-calc-core-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bradford-james/coded-calc-core-js/issues"
+  },
+  "homepage": "https://github.com/bradford-james/coded-calc-core-js#readme",
+  "description": "",
+  "scripts": {
+    "start": "node bin/coded-calc.js",
+    "test": "jest",
+    "format": "npm run prettier -- --write",
+    "prettier": "prettier --ignore-path .gitignore --write \"**/*.+(js|json)\"",
+    "lint": "eslint .",
+    "commit": "npm run format && npm run lint && git add . && git cz",
+    "release": "standard-version",
+    "publish-release": "npm run release && git push --follow-tags && npm publish"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test",
+      "prepare-commit-msg": "",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "post-commit": "",
+      "pre-push": "npm test"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "@commitlint/prompt": "^8.3.5",
+    "cz-conventional-changelog": "^3.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^4.2.1",
+    "prettier": "^1.19.1"
+  }
 }
