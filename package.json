@@ -24,9 +24,7 @@
     "prettier": "prettier --ignore-path .gitignore --write \"**/*.+(js|json)\"",
     "lint": "eslint .",
     "commit": "npm run format && npm run lint && git add . && git cz",
-    "release": "standard-version",
-    "publish-release": "npm run release && git push --follow-tags",
-    "semantic-release": "semantic-release"
+    "release": "git push --follow-tags"
   },
   "husky": {
     "hooks": {
@@ -34,7 +32,7 @@
       "prepare-commit-msg": "",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "post-commit": "",
-      "pre-push": "npm test"
+      "pre-push": ""
     }
   },
   "config": {
