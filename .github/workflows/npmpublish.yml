@@ -6,10 +6,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Define Env Vars
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
@@ -17,6 +13,9 @@ jobs:
       - run: npm ci
       - run: npm test
       - run: npx semantic-release
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
   # publish-npm:
   #   needs: build
   #   runs-on: ubuntu-latest
