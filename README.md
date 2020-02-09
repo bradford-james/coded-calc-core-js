@@ -1,5 +1,4 @@
 # Coded-Calc Core-JS
 
-![](https://github.com/bradford-james/coded-calc-core-js/workflows/%20Node.js%20Package/badge.svg)
-
-TBC
+![GitHub package.json version](https://img.shields.io/github/package-json/v/bradford-james/coded-calc-cli)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/bradford-james/coded-calc-cli/Node.js%20Package)
